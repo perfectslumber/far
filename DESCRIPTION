@@ -1,0 +1,11 @@
+Package: far
+Type: Package
+Title: Fatality Analysis Report System Data Analysis
+Version: 0.1.0
+Author: Qinan Hu
+Maintainer: Qinan Hu <qh78@cornell.edu>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
