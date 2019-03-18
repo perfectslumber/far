@@ -1,0 +1,66 @@
+---
+title: "Fatality Analysis Report System Data Processing Vignette"
+author: "Qinan Hu"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = TRUE,
+  results = "markup"
+)
+```
+
+## Package overview
+This is a Vignette describing the functions in the `far` package. This also serves as an assignment for Coursera's 
+"Building R Packages" course.
+This package includes data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes from 2013 to 2015.
+This package provides functions to read data from the raw data file, summarize the number of incidents occurred in each month in the given year, and plot the incidents on a map of requested state in a year.
+
+## Read single dataset
+The functions `make_filename()` and `fars_read()` can be used to read data files that come with this package. In `make_filename()` you can specify the year you want to read the data from (Be ware that only data from 2013, 2014 or 2015 are available).
+
+```{r loading_packages, message = FALSE}
+library(far)
+library(dplyr)
+library(tidyr)
+library(maps)
+library(graphics)
+```
+
+```{r read_data}
+filename1 <- make_filename(2013)
+example_data1 <- fars_read(filename1)
+head(example_data1)
+```
+
+## Read month info from multiple datasets
+The function `fars_read_years()` allows reading information of months from multiple years' of data at once. It will return a list of tibbles containing each year's incident month information.
+
+```{r read_more_data}
+example_data2 <- fars_read_years(c(2013, 2014))
+class(example_data2)
+head(example_data2[[1]])
+```
+
+## Summarize month info from multiple datasets
+The function `fars_summarize_years()` allows reading information of months from multiple years' of data at once. Then it will summarize how many incidents occurred in each month in requested years. It will return a list of tibbles containing each year's incident number summary by month.
+
+```{r summarize_years}
+example_data3 <- fars_summarize_years(c(2013, 2014))
+class(example_data3)
+example_data3[[1]]
+```
+
+## Plot the locations of all incidents in a state in a year
+The function `fars_map_state()` will read data from a single year, plot a map of the state requested (specified by `state.num` argument), and plot the locations of all the incidents happened in that state in that year.
+```{r plot_map, fig.align = 'center'}
+fars_map_state(18, 2014)
+```
