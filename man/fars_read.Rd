@@ -17,6 +17,6 @@ This is a function to read a .csv file with the given file name into a tibble.
 Conditions that may result in an error: \code{filename} is not a valid path.
 }
 \examples{
-fars_read("accident_2013.csv.bz2")
+\dontrun{fars_read("accident_2013.csv.bz2")}
 
 }

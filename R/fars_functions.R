@@ -10,7 +10,7 @@
 #'
 #' @return This function returns a tibble read from the requested file.
 #'
-#' @examples fars_read("accident_2013.csv.bz2")
+#' @examples \dontrun{fars_read("accident_2013.csv.bz2")}
 #'
 #' @export
 fars_read <- function(filename) {
@@ -33,7 +33,7 @@ fars_read <- function(filename) {
 #' @return This function prints a character string of file name based on input year.
 #' It can be used for reading the file.
 #'
-#' @examples make_filename(2014)
+#' @examples \dontrun{make_filename(2014)}
 #'
 #' @export
 make_filename <- function(year) {
@@ -57,7 +57,7 @@ make_filename <- function(year) {
 #' @return This function returns a list of tibbles.
 #' Each tibble contain two columns with month and year information extrated from data of requested years.
 #'
-#' @examples fars_read_years(c(2013, 2014))
+#' @examples \dontrun{fars_read_years(c(2013, 2014))}
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -89,7 +89,7 @@ fars_read_years <- function(years) {
 #' @return This function returns a list of tibbles, each tibble contains two columns.
 #' The first column is each month, the second column is observation number in that month.
 #'
-#' @examples fars_summarize_years(c(2013, 2014))
+#' @examples \dontrun{fars_summarize_years(c(2013, 2014))}
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -119,7 +119,7 @@ fars_summarize_years <- function(years) {
 #' @return This function draws a map of the requested state, and plot on it the
 #' incidents occured in that state in the requested year. Each point represents an incident
 #'
-#' @examples fars_map_state(1, 2014)
+#' @examples \dontrun{fars_map_state(1, 2014)}
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

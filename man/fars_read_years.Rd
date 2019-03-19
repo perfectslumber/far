@@ -22,6 +22,6 @@ Conditions that may result in an error:
 Data of requested year does not exist.
 }
 \examples{
-fars_read_years(c(2013, 2014))
+\dontrun{fars_read_years(c(2013, 2014))}
 
 }

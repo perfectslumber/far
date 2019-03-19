@@ -24,6 +24,6 @@ Conditions that may result an error:
 Data of requested year does not exist;
 }
 \examples{
-fars_map_state(1, 2014)
+\dontrun{fars_map_state(1, 2014)}
 
 }

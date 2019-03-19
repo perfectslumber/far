@@ -19,6 +19,6 @@ Conditions that may result in an error:
 Data of requested year does not exist.
 }
 \examples{
-make_filename(2014)
+\dontrun{make_filename(2014)}
 
 }
